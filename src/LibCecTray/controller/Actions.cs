@@ -183,11 +183,24 @@ namespace LibCECTray.controller
       (new Thread(_activeProcess.Run)).Start();
     }
 
-    /// <summary>
-    /// Changes the physical address setting of libCEC
-    /// </summary>
-    /// <param name="physicalAddress">The new physical address</param>
-    public void SetPhysicalAddress(ushort physicalAddress)
+        /// <summary>
+        /// Send a raw command to the adapter
+        /// </summary>
+        /// <param name="hexCommand"></param>
+        public void SendRawCommand(string hexCommand)
+        {
+            if (SuppressUpdates || _activeProcess != null) return;
+
+            _activeProcess = new SendRawCommand(_controller.Lib, hexCommand);
+            _activeProcess.EventHandler += ProcessEventHandler;
+            (new Thread(_activeProcess.Run)).Start();
+        }
+
+        /// <summary>
+        /// Changes the physical address setting of libCEC
+        /// </summary>
+        /// <param name="physicalAddress">The new physical address</param>
+        public void SetPhysicalAddress(ushort physicalAddress)
     {
       if (SuppressUpdates || _activeProcess != null || !_controller.Settings.OverridePhysicalAddress.Value) return;
 
