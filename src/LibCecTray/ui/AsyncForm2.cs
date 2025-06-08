@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace ModernCECTray.UI
 {
-    public class AsyncForm : Form
+    public class AsyncForm2 : Form
     {
         protected void SetControlEnabled(Control control, bool enabled)
         {

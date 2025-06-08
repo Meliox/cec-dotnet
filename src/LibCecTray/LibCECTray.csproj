@@ -130,6 +130,7 @@
     </Compile>
     <Compile Include="controller\applications\internal\ForegroundAppController.cs" />
     <Compile Include="controller\CECController.cs" />
+    <Compile Include="controller\ModernCECController.cs" />
     <Compile Include="controller\SystemIdleMonitor.cs" />
     <Compile Include="settings\CECSettingBool.cs" />
     <Compile Include="settings\CECSettingByte.cs" />
@@ -153,6 +154,9 @@
     </Compile>
     <Compile Include="settings\CECSetting.cs" />
     <Compile Include="settings\CECSettings.cs" />
+    <Compile Include="ui\AsyncForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ui\CECTray.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +173,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ui\IAsyncControls.cs" />
+    <Compile Include="ui\ModernCECTray.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <EmbeddedResource Include="controller\applications\ApplicationControllerUI.resx">
       <DependentUpon>ApplicationControllerUI.cs</DependentUpon>
       <SubType>Designer</SubType>
