@@ -163,6 +163,8 @@
             this.cbConnectedDevice.Size = new System.Drawing.Size(133, 21);
             this.cbConnectedDevice.TabIndex = 5;
             this.helpConnectedHDMIDevice.SetToolTip(this.cbConnectedDevice, "The HDMI device to which the USB-CEC adapter is connected");
+            this.cbConnectedDevice.SelectedIndexChanged += new System.EventHandler(this.cbConnectedDevice_SelectedIndexChanged);
+            this.cbConnectedDevice.SelectedValueChanged += new System.EventHandler(this.cbConnectedDevice_SelectedValueChanged);
             // 
             // tbPhysicalAddress
             // 

@@ -726,14 +726,24 @@ namespace LibCECTray.ui
         {
             button_RawCommand.Enabled = IsValidRawCommandFormat((string)textBox_RawCommand.Text);
         }
+
+        private void cbConnectedDevice_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine(cbConnectedDevice.DropDownStyle);
+        }
+
+        private void cbConnectedDevice_SelectedValueChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine(cbConnectedDevice.DropDownStyle);
+        }
     }
 
-    
 
-  /// <summary>
-  /// The tab pages in this application
-  /// </summary>
-  internal enum ConfigTab
+
+    /// <summary>
+    /// The tab pages in this application
+    /// </summary>
+    internal enum ConfigTab
   {
     Configuration,
     KeyConfiguration,
