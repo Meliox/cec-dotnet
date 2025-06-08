@@ -688,12 +688,7 @@ namespace LibCECTray.ui
           break;
       }
     }
-  }
 
-  /// <summary>
-  /// The tab pages in this application
-  /// </summary>
-  internal enum ConfigTab
         private void button_RawCommand_Click(object sender, EventArgs e)
         {
             var hexCommand = textBox_RawCommand.Text;
@@ -732,6 +727,13 @@ namespace LibCECTray.ui
             button_RawCommand.Enabled = IsValidRawCommandFormat((string)textBox_RawCommand.Text);
         }
     }
+
+    
+
+  /// <summary>
+  /// The tab pages in this application
+  /// </summary>
+  internal enum ConfigTab
   {
     Configuration,
     KeyConfiguration,

@@ -174,6 +174,15 @@ namespace LibCECTray.controller
     /// <param name="address">The new device to which the adapter is connected</param>
     /// <param name="portnumber">The new HDMI port number</param>
     public void SetConnectedDevice(CecLogicalAddress address, int portnumber)
+    {
+      if (SuppressUpdates || _activeProcess != null) return;
+
+      _controller.SetControlsEnabled(false);
+      _activeProcess = new UpdateConnectedDevice(_controller.Lib, address, portnumber);
+      _activeProcess.EventHandler += ProcessEventHandler;
+      (new Thread(_activeProcess.Run)).Start();
+    }
+
         /// <summary>
         /// Send a raw command to the adapter
         /// </summary>
@@ -186,20 +195,12 @@ namespace LibCECTray.controller
             _activeProcess.EventHandler += ProcessEventHandler;
             (new Thread(_activeProcess.Run)).Start();
         }
-    {
-      if (SuppressUpdates || _activeProcess != null) return;
 
-      _controller.SetControlsEnabled(false);
-      _activeProcess = new UpdateConnectedDevice(_controller.Lib, address, portnumber);
-      _activeProcess.EventHandler += ProcessEventHandler;
-      (new Thread(_activeProcess.Run)).Start();
-    }
-
-    /// <summary>
-    /// Changes the physical address setting of libCEC
-    /// </summary>
-    /// <param name="physicalAddress">The new physical address</param>
-    public void SetPhysicalAddress(ushort physicalAddress)
+        /// <summary>
+        /// Changes the physical address setting of libCEC
+        /// </summary>
+        /// <param name="physicalAddress">The new physical address</param>
+        public void SetPhysicalAddress(ushort physicalAddress)
     {
       if (SuppressUpdates || _activeProcess != null || !_controller.Settings.OverridePhysicalAddress.Value) return;
 
