@@ -74,7 +74,7 @@ namespace LibCECTray.controller.applications.@internal
       if (running)
       {
         // Kodi is running, close the application, or we'll block communication
-        Application.Exit();
+        //Application.Exit();
       }
     }
 
