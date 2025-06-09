@@ -603,7 +603,7 @@ namespace LibCECTray.controller
         if (_config == null)
         {
           _config = new LibCECConfiguration {
-            DeviceName = "CEC Tray",
+            DeviceName = Settings.DeviceName.Value,
             ClientVersion = LibCECConfiguration.CurrentVersion,
             ActivateSource = Settings.ActivateSource.Value,
             WakeDevices = Settings.WakeDevices.Value,

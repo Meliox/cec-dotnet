@@ -100,6 +100,8 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pbAlert = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tbDeviceName = new System.Windows.Forms.TextBox();
             this.trayIconMenu.SuspendLayout();
             this.LogOutput.SuspendLayout();
             this.tbTestCommands.SuspendLayout();
@@ -506,6 +508,8 @@
             // 
             // Configuration
             // 
+            this.Configuration.Controls.Add(this.tbDeviceName);
+            this.Configuration.Controls.Add(this.label3);
             this.Configuration.Controls.Add(this.cbDetectAddress);
             this.Configuration.Controls.Add(this.bFirmwareUpgrade);
             this.Configuration.Controls.Add(this.lFirmwareVersion);
@@ -548,7 +552,7 @@
             // bFirmwareUpgrade
             // 
             this.bFirmwareUpgrade.Enabled = false;
-            this.bFirmwareUpgrade.Location = new System.Drawing.Point(199, 265);
+            this.bFirmwareUpgrade.Location = new System.Drawing.Point(199, 290);
             this.bFirmwareUpgrade.Name = "bFirmwareUpgrade";
             this.bFirmwareUpgrade.Size = new System.Drawing.Size(125, 23);
             this.bFirmwareUpgrade.TabIndex = 38;
@@ -560,7 +564,7 @@
             // lFirmwareVersion
             // 
             this.lFirmwareVersion.AutoSize = true;
-            this.lFirmwareVersion.Location = new System.Drawing.Point(37, 270);
+            this.lFirmwareVersion.Location = new System.Drawing.Point(37, 295);
             this.lFirmwareVersion.Name = "lFirmwareVersion";
             this.lFirmwareVersion.Size = new System.Drawing.Size(94, 13);
             this.lFirmwareVersion.TabIndex = 37;
@@ -571,7 +575,7 @@
             // 
             this.pbFirmwareUpgrade.BackgroundImage = global::LibCECTray.Properties.Resources.settings;
             this.pbFirmwareUpgrade.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbFirmwareUpgrade.Location = new System.Drawing.Point(6, 237);
+            this.pbFirmwareUpgrade.Location = new System.Drawing.Point(6, 262);
             this.pbFirmwareUpgrade.Name = "pbFirmwareUpgrade";
             this.pbFirmwareUpgrade.Size = new System.Drawing.Size(24, 24);
             this.pbFirmwareUpgrade.TabIndex = 36;
@@ -582,7 +586,7 @@
             // 
             this.lFirmware.AutoSize = true;
             this.lFirmware.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lFirmware.Location = new System.Drawing.Point(36, 237);
+            this.lFirmware.Location = new System.Drawing.Point(36, 262);
             this.lFirmware.Name = "lFirmware";
             this.lFirmware.Size = new System.Drawing.Size(97, 24);
             this.lFirmware.TabIndex = 35;
@@ -593,7 +597,7 @@
             // 
             this.pictureBox1.BackgroundImage = global::LibCECTray.Properties.Resources.computer;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 172);
+            this.pictureBox1.Location = new System.Drawing.Point(6, 197);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(24, 24);
             this.pictureBox1.TabIndex = 34;
@@ -613,7 +617,7 @@
             // 
             this.cbStartMinimised.AutoSize = true;
             this.cbStartMinimised.Enabled = false;
-            this.cbStartMinimised.Location = new System.Drawing.Point(40, 208);
+            this.cbStartMinimised.Location = new System.Drawing.Point(40, 233);
             this.cbStartMinimised.Name = "cbStartMinimised";
             this.cbStartMinimised.Size = new System.Drawing.Size(118, 17);
             this.cbStartMinimised.TabIndex = 32;
@@ -657,7 +661,7 @@
             // 
             this.lPlayerConfig.AutoSize = true;
             this.lPlayerConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lPlayerConfig.Location = new System.Drawing.Point(36, 172);
+            this.lPlayerConfig.Location = new System.Drawing.Point(36, 197);
             this.lPlayerConfig.Name = "lPlayerConfig";
             this.lPlayerConfig.Size = new System.Drawing.Size(114, 24);
             this.lPlayerConfig.TabIndex = 16;
@@ -966,6 +970,22 @@
             this.pbAlert.Visible = false;
             this.pbAlert.Click += new System.EventHandler(this.pbAlertClick);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(37, 171);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(92, 13);
+            this.label3.TabIndex = 40;
+            this.label3.Text = "CEC device name";
+            // 
+            // tbDeviceName
+            // 
+            this.tbDeviceName.Location = new System.Drawing.Point(199, 168);
+            this.tbDeviceName.Name = "tbDeviceName";
+            this.tbDeviceName.Size = new System.Drawing.Size(100, 20);
+            this.tbDeviceName.TabIndex = 41;
+            // 
             // CECTray
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1091,5 +1111,7 @@
     private System.Windows.Forms.CheckBox cbDetectAddress;
         private System.Windows.Forms.Button button_RawCommand;
         private System.Windows.Forms.TextBox textBox_RawCommand;
+        private System.Windows.Forms.TextBox tbDeviceName;
+        private System.Windows.Forms.Label label3;
     }
 }
