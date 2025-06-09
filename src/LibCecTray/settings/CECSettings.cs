@@ -57,6 +57,7 @@ namespace LibCECTray.settings
     public static string KeyStandbyScreen = "global_standby_screen";
     public static string KeyTVAutoPowerOn = "global_tv_auto_power_on";
     public static string KeyDetectPhysicalAddress = "global_detect_physical_address";
+    public static string KeyDeviceName = "global_device_name";
     #endregion
 
     public CECSettings(CECSetting.SettingChangedHandler changedHandler)
@@ -373,6 +374,19 @@ namespace LibCECTray.settings
           setting.SettingChanged += OnSettingChanged;
         }
         return _settings[KeyStandbyScreen].AsSettingIdleTime;
+      }
+    }
+
+    public CECSettingString DeviceName {
+      get {
+        if (!_settings.ContainsKey(KeyDeviceName))
+        {
+          CECSettingString setting = new CECSettingString(KeyDeviceName, Resources.global_device_name, "CEC Tray", _changedHandler);
+          _settings[KeyDeviceName] = setting;
+          setting.Load();
+          setting.SettingChanged += OnSettingChanged;
+        }
+        return _settings[KeyDeviceName].AsSettingString;
       }
     }
     #endregion
