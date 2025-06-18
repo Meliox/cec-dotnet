@@ -114,6 +114,8 @@ namespace LibCECTray.settings
 
     public static CecLogicalAddress GetLogicalAddressFromString(string name)
     {
+        if (string.IsNullOrEmpty(name)) return CecLogicalAddress.Unknown;
+
       switch (name.Substring(0, 1).ToLower())
       {
         case "0":

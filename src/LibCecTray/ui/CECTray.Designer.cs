@@ -135,39 +135,38 @@
             // 
             // cbPortNumber
             // 
-            this.cbPortNumber.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbPortNumber.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPortNumber.Enabled = false;
             this.cbPortNumber.FormattingEnabled = true;
             this.cbPortNumber.Location = new System.Drawing.Point(199, 60);
             this.cbPortNumber.Name = "cbPortNumber";
             this.cbPortNumber.Size = new System.Drawing.Size(133, 21);
             this.cbPortNumber.TabIndex = 11;
-            this.cbPortNumber.Text = "global_hdmi_port";
             this.helpPortNumber.SetToolTip(this.cbPortNumber, "The HDMI port number, to which you connected your USB-CEC adapter.");
             // 
             // cbStandbyScreen
             // 
-            this.cbStandbyScreen.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbStandbyScreen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbStandbyScreen.Enabled = false;
             this.cbStandbyScreen.FormattingEnabled = true;
             this.cbStandbyScreen.Location = new System.Drawing.Point(40, 267);
             this.cbStandbyScreen.Name = "cbStandbyScreen";
             this.cbStandbyScreen.Size = new System.Drawing.Size(123, 21);
             this.cbStandbyScreen.TabIndex = 43;
-            this.cbStandbyScreen.Text = "global_standby_screen";
             this.helpPortNumber.SetToolTip(this.cbStandbyScreen, "The HDMI port number, to which you connected your USB-CEC adapter.");
             // 
             // cbConnectedDevice
             // 
-            this.cbConnectedDevice.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbConnectedDevice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbConnectedDevice.Enabled = false;
             this.cbConnectedDevice.FormattingEnabled = true;
             this.cbConnectedDevice.Location = new System.Drawing.Point(199, 33);
             this.cbConnectedDevice.Name = "cbConnectedDevice";
             this.cbConnectedDevice.Size = new System.Drawing.Size(133, 21);
             this.cbConnectedDevice.TabIndex = 5;
-            this.cbConnectedDevice.Text = "global_connected_to_hdmi_device";
             this.helpConnectedHDMIDevice.SetToolTip(this.cbConnectedDevice, "The HDMI device to which the USB-CEC adapter is connected");
+            this.cbConnectedDevice.SelectedIndexChanged += new System.EventHandler(this.cbConnectedDevice_SelectedIndexChanged);
+            this.cbConnectedDevice.SelectedValueChanged += new System.EventHandler(this.cbConnectedDevice_SelectedValueChanged);
             // 
             // tbPhysicalAddress
             // 
@@ -183,24 +182,24 @@
             // 
             // cbDeviceType
             // 
+            this.cbDeviceType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDeviceType.Enabled = false;
             this.cbDeviceType.FormattingEnabled = true;
             this.cbDeviceType.Location = new System.Drawing.Point(199, 113);
             this.cbDeviceType.Name = "cbDeviceType";
             this.cbDeviceType.Size = new System.Drawing.Size(133, 21);
             this.cbDeviceType.TabIndex = 14;
-            this.cbDeviceType.Text = "global_device_type";
             this.helpDeviceType.SetToolTip(this.cbDeviceType, "Set this to \'Player\' when your TV is having problems with \'Recorder\'");
             // 
             // cbVendorId
             // 
+            this.cbVendorId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbVendorId.Enabled = false;
             this.cbVendorId.FormattingEnabled = true;
             this.cbVendorId.Location = new System.Drawing.Point(199, 140);
             this.cbVendorId.Name = "cbVendorId";
             this.cbVendorId.Size = new System.Drawing.Size(133, 21);
             this.cbVendorId.TabIndex = 28;
-            this.cbVendorId.Text = "global_override_tv_vendor";
             this.helpDeviceType.SetToolTip(this.cbVendorId, "Only set this value when autodetection isn\'t working");
             // 
             // trayIcon
@@ -495,6 +494,7 @@
             // 
             // cbCommandDestination
             // 
+            this.cbCommandDestination.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCommandDestination.FormattingEnabled = true;
             this.cbCommandDestination.Items.AddRange(new object[] {
             "0: TV",
@@ -503,7 +503,6 @@
             this.cbCommandDestination.Name = "cbCommandDestination";
             this.cbCommandDestination.Size = new System.Drawing.Size(121, 21);
             this.cbCommandDestination.TabIndex = 0;
-            this.cbCommandDestination.Text = "0: TV";
             this.cbCommandDestination.SelectedIndexChanged += new System.EventHandler(this.CbCommandDestinationSelectedIndexChanged);
             // 
             // Configuration
